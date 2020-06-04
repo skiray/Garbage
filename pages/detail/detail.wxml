@@ -1,0 +1,23 @@
+<view class="wrap">
+    <!-- 名称 -->
+    <view class="typeName">{{newslist.name}}</view>
+    <view class="typeImg">
+        <!-- 种类图片 -->
+        <image src="{{imgSrcGroup[newslist.type]}}" mode="widthFix"/>
+    </view>
+    <!-- 介绍 -->
+    <view class="explain">
+        <view class="title">分类介绍：</view>
+        <text>{{newslist.explain}}</text>
+        </view>
+    <view class="contain">
+        <view class="title">常见同类：</view>
+        <text>{{newslist.contain}}</text>
+        </view>
+    <view class="tip">
+        <view class="title">投放建议：</view>
+        <text>{{newslist.tip}}</text>
+        </view>
+</view>
+<!-- 底部组件 -->
+<bottomTips></bottomTips>

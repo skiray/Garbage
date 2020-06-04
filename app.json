@@ -1,0 +1,46 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/search/search",
+    "pages/category/category",
+    "pages/detail/detail",
+    "pages/test/test",
+    "pages/about/about",
+    "pages/login/login"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#00BB6A",
+    "navigationBarTitleText": "垃圾分类查询助手",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    
+    "color": "#707070",
+    "selectedColor": "#00BB6A",
+    "backgroundColor": "#fff",
+    "position": "bottom",
+    "borderStyle": "white",
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "主页",
+      "iconPath": "/images/icon/zhuye.png",
+      "selectedIconPath": "/images/icon/zhuyeg.png"
+    },{
+      "pagePath": "pages/test/test",
+      "text": "测试",
+      "iconPath": "/images/icon/ceshi.png",
+      "selectedIconPath": "/images/icon/ceshig.png"
+    }
+    ,{
+      "pagePath": "pages/about/about",
+      "text": "关于",
+      "iconPath": "/images/icon/guanyu.png",
+      "selectedIconPath": "/images/icon/guanyug.png"
+    }
+  ]
+  },
+
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

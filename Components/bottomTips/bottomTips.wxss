@@ -1,0 +1,14 @@
+.main{
+    flex-direction: column;
+}
+.main .warn{
+    color: red;
+    justify-content: center;
+    align-items: center;
+    margin: 10rpx 5rpx;
+}
+.main .declare{
+    justify-content: center;
+    align-items: center;
+    margin: 10rpx 5rpx;
+}

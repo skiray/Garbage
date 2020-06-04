@@ -1,0 +1,52 @@
+page {
+    background-color: #edece8;
+  }
+  .user_info_wrap {
+    height: 48vh;
+    background-color: var(--themeColor);
+    overflow: hidden;
+    position: relative;
+  }
+  .user_info_wrap .user_img_wrap .user_bg {
+    position: relative;
+    height: 50vh;
+    filter: blur(10rpx);
+  }
+  .user_info_wrap .user_img_wrap .user_info {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 30%;
+    text-align: center;
+  }
+  .user_info_wrap .user_img_wrap .user_info image {
+    width: 25vw;
+    border-radius: 50%;
+  }
+  .user_info_wrap .user_img_wrap .user_info view {
+    color: #fff;
+    margin-top: 30rpx;
+    font-size: 30rpx;
+  }
+  .user_info_wrap .user_login {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 40%;
+    border: 3rpx solid greenyellow;
+    color: greenyellow;
+    font-size: 30rpx;
+    padding: 20rpx;
+    border-radius: 10rpx;
+  }
+  .app_info_wrap {
+    margin-top: 30rpx;
+    font-size: 40rpx;
+  }
+  .app_info_wrap .app_info_item {
+    border-radius: 90rpx;
+    padding: 40rpx;
+    border-bottom: 3rpx solid #ccc;
+  }
+
+  

@@ -1,0 +1,9 @@
+<view class="main">
+    <view class="warn">
+        <icon type="warn" size="18"/>
+        只有一个地球，垃圾分类有助于更好的处理污染和回收问题，做好垃圾分类人人有责。
+    </view>
+    <view class="declare">
+        本工具仅供参考，具体分类要求以当地专业管理部门为准。
+    </view>
+</view>

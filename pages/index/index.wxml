@@ -1,0 +1,41 @@
+<view class="index">
+<!-- 搜索组件 -->
+    <view bindtap="toSearch">
+        <searchInput></searchInput>
+    </view>
+    <view class="getImage">
+        <image bindtap="chooseImg" class="camera" src="../../images/icon/paizhao.png" mode="widthFix"/>
+    </view>
+
+    <!-- 分类图 -->
+    <view class="category" hidden="{{isHidden}}">
+        <navigator class="navi" url="../category/category" >
+            <view class="cateItem"
+            wx:for="{{catePicList}}"
+            wx:key="*this"
+            >
+            <image src="../../images/{{item.name}}" mode="widthFix"/>    
+            </view>
+        </navigator>
+    </view>
+    <!-- 拍照识别结果 -->
+    <view class="imgResList" hidden="{{!isShow}}">
+        <view class="resTitle">识别结果</view>
+        <view class="resContent">
+            <view bindtap="resItemDetail"
+        wx:for="{{imgRes}}"
+        wx:key="*this"
+        data-id="{{index}}"
+
+        >
+                <view class="imgResItem">
+                    <text>{{item.name}}---->相似度{{item.trust}}%</text>
+                </view>    
+            </view>
+        </view>
+    </view>
+<!-- 底部组件 -->
+    <bottomTips></bottomTips>
+</view>
+
+

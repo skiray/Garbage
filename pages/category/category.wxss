@@ -1,0 +1,54 @@
+/* 左侧 */
+ .cateWarp {
+    width: 100vw;
+    height: 100vh;
+    background-color: #fff;
+    display: flex;
+ } 
+ .cateGroup {
+      width: 30.33vw; 
+      border-right: 2rpx solid #dedede;
+      height: 100%;
+      text-align: center;  
+ }
+ .cateItem {
+    width: 200rpx;
+    height: 100rpx;
+    line-height: 100rpx;
+    justify-content: center;
+    box-sizing: border-box;
+    font-weight: bolder;
+ }
+ .active{
+    border-left:5rpx solid var(--themeColor);
+ }
+ /* 右边栏 */
+ .rightWrap {
+    width: 100%;
+    line-height: 100%;
+    display: flex;
+    flex-direction: column;
+    }
+ .displayImg{
+   width: 480rpx;
+   height: 480rpx;
+   margin: 10rpx;
+   border-radius: 40rpx;
+ }
+ .text{
+   margin: 3rpx 20rpx 3rpx 10rpx;
+   padding: 10rpx 20rpx 10rpx 20rpx;
+ }
+ .title1{
+   font-weight: bold;
+   font-size: 30rpx;
+   margin: 20rpx;
+   color: var(--themeColor);
+ }
+ .title2{
+    font-weight: bold;
+    font-size: 30rpx;
+    margin: 20rpx;
+    color: red;
+  }
+ 

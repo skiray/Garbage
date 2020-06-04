@@ -1,0 +1,42 @@
+<view class="searchWrap">
+    <!-- 顶部元素 -->
+        <view class="topContent">
+            <icon class="searchIcon" type="search" size="50rpx"/>
+            <input type="text" class="searchInput" 
+            placeholder="输入要查询的垃圾" 
+            value="{{inputValue}}" 
+            bindinput="inputing"
+            >
+            </input>
+            <!-- 取消搜索按钮，清空搜索框 -->
+            <view class="rightBar" wx:if="{{inputValue}}">
+                <view  bindtap="clearInput">
+                    取消<icon type="clear" size="23" color=""/>
+                </view> 
+                <view bindtap="submitInput" report-submit='true'>搜索</view>
+            </view>    
+        </view>
+
+    <!-- 热搜板块 -->
+    
+    <view class="hotSearchGroup">
+        <view class="hotSearchItem" wx:for="{{hotSearch}}"
+        wx:key="name"
+        bindtap="hotToShowPage"
+        data-name="{{item.name}}" data-type="{{item.type}}"
+        >
+            <view>{{item.name}}</view>
+        </view>
+    </view>
+
+    <!-- 搜索列表 -->
+    <view class="content">
+        <view class="item" wx:for="{{searchItem}}" 
+        wx:key="name" 
+        bindtap="toShowPage"
+        data-flag="done"
+        >
+         <view>{{item.name}}</view>
+        </view>
+    </view>
+</view>

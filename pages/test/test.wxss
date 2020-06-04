@@ -1,0 +1,225 @@
+/*垃圾分类测试题*/
+page{ 
+  height: 100vh; 
+}
+/* 小测验 游戏区域*/
+#quizzes {
+  position: absolute;
+  left: 0rpx;
+  top: 0rpx;
+  right: 0rpx;
+  bottom: 0rpx;
+  background-color: rgba(115, 255, 0, 0.075);
+}
+/* 使题目相互之间不覆盖 */
+.quiz {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  transition: all 320ms cubic-bezier(0.4, -0.09, 1, 1.01) 200ms;
+  z-index: 50;
+}
+
+.quiz.in {
+  /* 隐藏未答的题 */
+  transform: translateX(50%);
+  opacity: 0;
+  z-index: 40;
+}
+
+.quiz.out {
+  /* 隐藏已答的题 */
+  transform: translateX(-50%);
+  opacity: 0;
+  z-index: 40;
+}
+/*左上角 显示第几道题 */
+.quiz-index {
+  margin: 50rpx 50rpx;
+  font-size: 50rpx;
+  font-weight: bold;
+  text-align: left;
+}
+/*左上角 显示第几道题 文字颜色 */
+.quiz-index text {
+  color: rgba(0, 0, 0, 0.19);
+}
+
+/* 题目垃圾问题 即垃圾名称*/
+.quiz-q {
+  display: block;
+  margin-top:80rpx;
+  margin-bottom: 100rpx;
+  font-size: 70rpx;
+  font-weight: bold;
+  line-height: 1.3em;
+  text-align: center;
+}
+
+/* 四个问题选项的布局 整体的样式*/
+.quiz-options {
+  margin-left: 135rpx;
+  margin-top: 50rpx;
+  width: 490rpx;
+}
+
+.quiz-option {
+  float: left;
+  width: 220rpx;
+  height: 220rpx;
+  box-sizing: border-box;
+  border-radius: 10px;
+  text-align: center;
+}
+/* 每一个选项之间的边距 和 颜色 处理 。 odd：奇数的*/
+.quiz-option:nth-child(odd) {
+  margin-right: 40rpx;
+}
+.quiz-option:nth-child(3), .quiz-option:nth-child(4) {
+  margin-top: 40rpx;
+}
+/* 厨余垃圾选项 被选中时的样式 */
+.quiz-option.selected:nth-child(1) {
+  border: 1px solid rgba(102, 64, 53, 0.5);
+  background-color: rgba(102, 64, 53, 0.05);
+}
+/* 其他垃圾选项 被选中时的样式 */
+.quiz-option.selected:nth-child(2) {
+  border: 1px solid rgba(44, 43, 39, 0.5);
+  background-color: rgba(44, 43, 39, 0.05);
+}
+/* 可回收物选项 被选中时的样式 */
+.quiz-option.selected:nth-child(3) {
+  border: 1px solid rgba(16, 72, 131, 0.5);
+  background-color: rgba(16, 72, 131, 0.05);
+}
+/* 有害垃圾选项 被选中时的样式 */
+.quiz-option.selected:nth-child(4) {
+  border: 1px solid rgba(229, 49, 34, 0.5);
+  background-color: rgba(229, 49, 34, 0.05);
+}
+
+.quiz-option image {
+  margin-top: 12rpx;
+  padding: 15rpx;
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 30rpx;
+}
+/* 选项中的文字处理 */
+.quiz-option text {
+  display: block;
+  margin-top: 0rpx;
+  font-size: 32rpx;
+  text-align: center;
+  line-height: 1em;
+}
+/* 测试结果 结果表 */
+/* 答完前隐藏分数+按钮 */
+#quizResult {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  transform: translateX(100%);
+  transition: all 360ms ease-in 200ms;
+  z-index: 190;
+}
+/* 显示测试结果 */
+#quizResult.in {
+  transform: translateX(0) !important;
+}
+/* 测试分数 */
+#score {
+  display: block;
+  margin-top: 30rpx;
+  font-size: 56rpx;
+  font-weight: bold;
+  line-height: 1em;
+  text-align: center;
+}
+/* 测试数据表 */
+#resultSheet {
+  margin: 20rpx 0rpx 0rpx;
+}
+/* 每一行测试内容 */
+.result-row {
+  font-size: 26rpx;
+  line-height: 2em;
+  overflow: hidden;
+}
+/*单双行测试内容 背景颜色处理 */
+.result-row:nth-child(even) {
+  background-color: #fafafa;
+}
+/* 结果中 测试题目 */
+.result-quiz-name {
+  float: left;
+  padding-left: 2em;
+  width: 450rpx;
+  height: 2em;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+/* 结果中 玩家答案+正确答案 的样式*/
+.result-my-answer, .result-right-answer {
+  position: relative;
+  float: left;
+  width: 150rpx;
+  height: 2em;
+  text-align: center;
+}
+/* 正确答案的字体颜色 */
+.result-right-answer {
+  color: #d23642;
+}
+/* 正确答案的定位 */
+.right-answer {
+  position: relative;
+}
+/* 正确答案的打钩（绿色） */
+.right-answer::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 30rpx;
+  height: 15rpx;
+  border-left: 2px solid #64a814;
+  border-bottom: 2px solid #64a814;
+  transform: translate(-50%, -70%) rotate(-45deg);
+  opacity: 1;
+}
+/* 再考一次+考考别人 位置+形状处理 */
+#actions {
+  position: relative;
+  margin-top: 50rpx;
+  height: 90rpx;
+  text-align: center;
+}
+#actions view, #actions button {
+  position: absolute;
+  top: 50%;
+  padding: 0rpx;
+  width: 250rpx;
+  height: 80rpx;
+  border-radius: 40rpx;
+  box-sizing: border-box;
+  transform: translate(-50%, -50%);
+  font-size: 36rpx;
+  line-height: 80rpx;
+}
+/* 再考一次 样式 */
+#actions view {
+  left: 208rpx;
+  background-color: #eee;
+}
+/* 考考别人 样式 */
+#actions button {
+  left: 542rpx;
+  background-color: var(--themeColor);
+}

@@ -1,0 +1,15 @@
+/* WXSS不支持通配符 */
+page,view,text,swiper,swiper-item,image,navigator{
+    padding: 0%;
+    margin: 0;
+    box-sizing: border-box;
+}
+page{
+  /* 主题颜色 RGP(0187106) 十六进制:#00BB6A*/    
+  --themeColor:#00BB6A;
+  /* 主题字体 */
+  font-size: 28rpx;
+}
+image{
+    width: 100%;
+}

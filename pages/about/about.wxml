@@ -1,0 +1,28 @@
+<view class="user_info_wrap">
+    <!-- 用户背景框 -->
+    <view wx:if="{{userinfo}}" class="user_img_wrap">
+        <image class="user_bg" src="{{userinfo.avatarUrl}}"/>
+        <view class="user_info">
+            <image class="user_icon" src="{{userinfo.avatarUrl}}" mode="widthFix"/>
+            <view class="nickname">{{userinfo.nickName}}</view>
+        </view>
+    </view>
+    <view class="user_login" wx:else >
+        <navigator  url="../login/login">
+            登录
+        </navigator>
+    </view>
+</view>
+<!-- 按钮 -->
+<view wx:if="{{userinfo}}" class="app_info_wrap">
+    <button open-type="share" class="app_info_item">
+        推荐给朋友</button>
+    <button open-type="contact" class="app_info_item">
+        联系客服
+    </button>
+    <button open-type="feedback" class="app_info_item" >
+        意见反馈</button>
+    <button bindtap="handleAbout" class="app_info_item">
+        关于</button>
+</view>
+<bottomTips></bottomTips>

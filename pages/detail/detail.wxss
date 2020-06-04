@@ -1,0 +1,58 @@
+/* 默认宽度750rpx */
+page{
+    background-color: #dedede;
+}
+.wrap{
+    margin: 45rpx 45rpx;
+    height: 95vh;
+    width: 650rpx;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 40rpx;
+}
+.typeName{
+    height: 45rpx;
+    width: 100%;
+    font-weight: bold;
+    font-size: 55rpx;
+    text-align: center;
+    margin: 30rpx;
+}
+.typeImg{    
+    margin: 45rpx 0;
+    width: 100%;    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.typeImg image{
+    border-radius: 40rpx;
+    width: 280rpx;
+    height: 280rpx;
+}
+.explain{
+    margin: 25rpx;
+}
+.contain{
+    margin: 25rpx;
+}
+.tip{
+    margin: 25rpx;
+}
+.title{
+    font-weight: bold;
+    font-size: 35rpx;
+}
+text{
+    /* 文字溢出隐藏 */
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    white-space: normal !important;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+}

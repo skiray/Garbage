@@ -1,0 +1,33 @@
+<searchInput></searchInput>
+<!-- 分类内容 -->
+<view class='cateWarp'>
+<!-- 左侧分类列表 -->
+  <view class='cateGroup'>
+    <view 
+    wx:for="{{categoryList}}" 
+    class='cateItem {{item.type==type?"active":""}}' 
+    catchtap='clickList' 
+    wx:key="name" 
+    id="{{index}}"
+    >
+    {{item.name}}</view>
+  </view>
+
+<!-- 右侧详细介绍 -->
+  <view class='rightWrap'>
+    <view class="displayImg">
+        <image src="{{picSrc}}" class="displayImg"></image>
+    </view>
+    <text class="title1">简介：</text>
+    <view class="text"> {{explain}}</view>
+    <text class="title2">投放建议：</text>
+    <text class="text" wx:for="{{tip}}"
+        wx:for-item="item2"
+        wx:key="*this"
+    >
+        {{item2}}
+    </text>
+      
+  </view>
+</view>
+<bottomTips></bottomTips>

@@ -1,0 +1,71 @@
+page{
+  background-color: #dedede;
+}
+.getImage{
+  height: 90rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 15rpx 0;
+}
+.camera{
+  width: 80rpx;
+  border-radius: 40rpx;
+}
+.category{
+  background-color: #fff;
+  width: 650rpx;
+  height: 650rpx;
+  margin-bottom: 40rpx;
+  margin: 0 50rpx;
+  display: flex;
+  border-radius: 40rpx;
+}
+
+.navi{
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.cateItem{
+  width: 250rpx;
+  margin: 25rpx;
+  
+}
+.cateItem image{
+  border-radius: 40rpx;
+}
+.imgResList{width: 750rpx;height: 650rpx;}
+.resTitle{
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 40rpx;
+  margin: 30rpx 0;
+}
+.resContent{
+  width: 700rpx;
+  margin: 0 25rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.imgResItem{
+  width: 700rpx;
+  height: 80rpx;
+  background-color: #fff;
+  margin: 15rpx;
+  border-radius: 20rpx;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+.imgResItem text{
+  margin-left: 20rpx;
+  font-size: 30rpx;
+}

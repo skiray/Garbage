@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "bottomTips":"../../Components/bottomTips/bottomTips"
+  },
+  "navigationBarTitleText": "详情介绍",
+  "navigationBarTextStyle":"white"
+}

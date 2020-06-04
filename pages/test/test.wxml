@@ -1,0 +1,44 @@
+<!-- 游戏垃圾分类测试题 --> 
+
+<view id="wrapper">
+  <!-- 小测验 -->
+  <view id="quizzes">
+  <!-- currentQ指当前第几题，初始值为0 。quiz：循环输出quizzes每一个问题-->
+    <view class="quiz{{currentQ===quizIndex?' ':currentQ>quizIndex?' out':' in'}}" wx:for="{{quizzes}}" wx:key="index" wx:for-index="quizIndex" wx:for-item="quiz">
+      <!--左上角 显示第几题 01、...、09、10 。totalQuizzes指总题数-->
+      <view class="quiz-index">{{quizIndex <9? '0'+[quizIndex+1]:[quizIndex+1]}} <text>/ {{totalQuizzes}}</text>
+      </view>
+      <!-- 问题quiz.q（即显示垃圾名称quiz.n） --> 
+      <text class="quiz-q" src="{{quiz.q}}">{{quiz.n}}</text>
+      <!-- 选项 -->
+      <view class="quiz-options">
+      <!--循环输出每一个cat选项。cats：四个垃圾分类的选项。 selected：被选中时的样式  -->
+        <view bindtap="select" class="quiz-option{{answers[quizIndex]===catIndex?' selected':''}}" data-option-index="{{catIndex}}" wx:for="cats" wx:key="index" wx:for-index="catIndex" wx:for-item="cat">
+          <image src="{{cats[catIndex].imageSrc}}"></image><!-- 选项里的图片 -->
+          <text>{{cats[catIndex].title}}</text><!-- 选项里的分类名字 -->
+        </view>
+      </view>
+    </view>
+    <!-- 结果。 in：显示测试结果 -->
+    <view class="{{currentQ>totalQuizzes-1?'in':''}}" id="quizResult">
+      <!-- 得分 -->
+      <text id="score">{{score}}分</text>
+      <!-- 结果表 -->
+      <view id="resultSheet">
+      <!-- 循环显示答案：问题+答案+正确答案 -->
+        <view class="result-row" wx:for="{{answers}}" wx:key="index" wx:for-item="answer">
+          <view class="result-quiz-name">{{quizzes[index].n}}</view>
+          <view class="result-my-answer">{{cats[answer].title}}</view>
+          <view class="result-right-answer{{answer===quizzes[index].c-1?' right-answer':''}}">
+          {{answer===quizzes[index].c-1?'':cats[quizzes[index].c-1].title}}
+          </view>
+        </view>
+        <!--  再考一次考考别人按钮  -->
+        <view id="actions">
+          <view bindtap="restart">再考一次</view>
+          <button openType="share">考考别人</button>
+        </view>
+      </view>
+    </view>
+  </view>
+</view> 
